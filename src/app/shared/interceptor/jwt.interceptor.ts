@@ -15,8 +15,7 @@ export class JwtInterceptor implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const token =
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjUzfQ.h_1srJinHC_GS3xQdErtQ5_1Wvtmk0Wc0RZdYomdv6M';
+    const token = localStorage.getItem('accessToken') || [];
 
     return next.handle(
       request.clone({

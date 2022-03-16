@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { StationsService } from '../../shered/services/stations.service';
+import { StationsService } from '../../shared/services/stations.service';
 
 @Component({
   selector: 'app-stations',

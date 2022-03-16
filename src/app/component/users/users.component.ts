@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../../shered/services/users.service';
+import { UsersService } from '../../shared/services/users.service';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup } from '@angular/forms';
 
@@ -81,7 +81,6 @@ export class UsersComponent implements OnInit {
       .updateUsers(this.userId, this.usersForm.value)
       .subscribe((res) => {
         this.getAllUsers();
-        console.log(res);
       });
   }
 

@@ -51,45 +51,58 @@
     ></button>
   </div>
   <form [formGroup]="usersForm">
-    <div>
-      <label for="exampleInput1">Name :</label>
-      <input
-        type="text"
-        class="form-control"
-        formControlName="name"
-        placeholder="Enter Name"
-      />
+    <div class="form-group row">
+      <label for="exampleInput1" class="col-sm-2 col-form-label">Name :</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="name"
+          placeholder="Enter Name"
+        />
+      </div>
     </div>
-
-    <div>
-      <label for="exampleInput2">Comment :</label>
-      <input
-        type="text"
-        class="form-control"
-        formControlName="comment"
-        placeholder="Enter Comment"
-      />
+    &nbsp;
+    <div class="form-group row">
+      <label for="exampleInput1" class="col-sm-2 col-form-label"
+        >Comment:</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="comment"
+          placeholder="Enter Comment"
+        />
+      </div>
     </div>
-
-    <div>
-      <label for="exampleInput3">Login :</label>
-      <input
-        type="text"
-        class="form-control"
-        formControlName="login"
-        placeholder="Enter Login"
-      />
+    &nbsp;
+    <div class="form-group row">
+      <label for="exampleInput1" class="col-sm-2 col-form-label">Login :</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="login"
+          placeholder="Enter Login"
+        />
+      </div>
     </div>
-
-    <div *ngIf="!createUser">
-      <label for="exampleInput4">Password :</label>
-      <input
-        type="password"
-        class="form-control"
-        formControlName="password"
-        placeholder="Enter Password"
-      />
+    &nbsp;
+    <div class="form-group row" *ngIf="!createUser">
+      <label for="exampleInput1" class="col-sm-2 col-form-label"
+        >Password:</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="password"
+          placeholder="Enter Password"
+        />
+      </div>
     </div>
+    &nbsp;
 
     <div class="flex">
       <button

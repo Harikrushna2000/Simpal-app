@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from './shered/services/users.service';
 
 @Component({
   selector: 'app-root',
