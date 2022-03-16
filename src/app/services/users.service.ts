@@ -12,4 +12,16 @@ export class UsersService {
   getUserList() {
     return this.http.get(this.url + 'users');
   }
+
+  creatUsers(data:any){
+    return this.http.post(this.url + 'users', data)
+  }
+
+  updateUsers(id:any){
+    return this.http.patch(this.url + 'users/{id}', id)
+  }
+
+  deleteUsers(id:any){
+    return this.http.delete(this.url + 'users/{id}', id)
+  }
 }
