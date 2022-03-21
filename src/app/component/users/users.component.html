@@ -3,7 +3,7 @@
 </button>
 
 <table class="table table-striped">
-  <thead>
+  <thead class="text-center">
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
@@ -14,7 +14,7 @@
       <th scope="col">Action</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="text-center">
     <tr *ngFor="let users of userList; let i = index">
       <th scope="row">{{ i }}</th>
       <td>{{ users.name }}</td>
@@ -24,11 +24,11 @@
       <td>{{ users.login }}</td>
       <td>
         <button class="btn btn-success" (click)="editUser(content, users)">
-          Edit
+          <i class="fa fa-pencil-square-o"></i>
         </button>
         &nbsp;
         <button class="btn btn-danger" (click)="deleteUser(users.id)">
-          Delete
+          <i class="fa fa-trash-o"></i>
         </button>
       </td>
     </tr>

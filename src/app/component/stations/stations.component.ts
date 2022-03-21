@@ -23,10 +23,10 @@ export class StationsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getAllStatiions();
+    this.getAllStations();
   }
 
-  getAllStatiions() {
+  getAllStations() {
     this.stationsService.getstations().subscribe(
       (res) => {
         this.stationsList = res;
@@ -44,9 +44,11 @@ export class StationsComponent implements OnInit {
       .result.then(
         (result) => {
           this.closeResult = `Closed with: ${result}`;
+          this.stationsForm.reset();
         },
         (reason) => {
           this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+          this.stationsForm.reset();
         }
       );
   }
@@ -63,9 +65,9 @@ export class StationsComponent implements OnInit {
 
   onSubmit() {
     this.stationsService
-      .creatstations(this.stationsForm.value)
+      .creatStations(this.stationsForm.value)
       .subscribe((res) => {
-        this.getAllStatiions();
+        this.getAllStations();
       });
   }
   editStation(content: any, station: any) {
@@ -75,16 +77,16 @@ export class StationsComponent implements OnInit {
   }
   editStationForm() {
     this.stationsService
-      .updatestations(this.stationId, this.stationsForm.value)
+      .updateStations(this.stationId, this.stationsForm.value)
       .subscribe((res) => {
-        this.getAllStatiions();
+        this.getAllStations();
       });
   }
 
   deleteStation(id: string) {
-    this.stationsService.deletestations(id).subscribe(
+    this.stationsService.deleteStations(id).subscribe(
       (res) => {
-        this.getAllStatiions();
+        this.getAllStations();
       },
       (error) => {
         alert(error);

@@ -47,9 +47,11 @@ export class UsersComponent implements OnInit {
       .result.then(
         (result) => {
           this.closeResult = `Closed with: ${result}`;
+          this.usersForm.reset();
         },
         (reason) => {
           this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+          this.usersForm.reset();
         }
       );
   }

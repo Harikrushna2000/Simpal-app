@@ -3,7 +3,7 @@
 </button>
 
 <table class="table table-striped">
-  <thead>
+  <thead class="text-center">
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
@@ -14,7 +14,7 @@
       <th scope="col">Action</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="text-center">
     <tr *ngFor="let stations of stationsList; let i = index">
       <th scope="row">{{ i }}</th>
       <td>{{ stations.name }}</td>
@@ -27,11 +27,11 @@
           class="btn btn-success"
           (click)="editStation(content, stations)"
         >
-          Edit
+          <i class="fa fa-pencil-square-o"></i>
         </button>
         &nbsp;
         <button class="btn btn-danger" (click)="deleteStation(stations.id)">
-          Delete
+          <i class="fa fa-trash-o"></i>
         </button>
       </td>
     </tr>
