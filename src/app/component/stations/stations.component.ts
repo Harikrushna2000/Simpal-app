@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { StationsService } from '../../shared/services/stations.service';
 
@@ -14,8 +14,8 @@ export class StationsComponent implements OnInit {
   stationId = '';
   createStation: boolean = false;
   stationsForm = new FormGroup({
-    name: new FormControl(''),
-    comment: new FormControl(''),
+    name: new FormControl('', Validators.required),
+    comment: new FormControl('', Validators.required),
   });
   constructor(
     private stationsService: StationsService,
@@ -27,7 +27,7 @@ export class StationsComponent implements OnInit {
   }
 
   getAllStations() {
-    this.stationsService.getstations().subscribe(
+    this.stationsService.getStations().subscribe(
       (res) => {
         this.stationsList = res;
       },

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../shared/services/users.service';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-users',
@@ -15,9 +15,9 @@ export class UsersComponent implements OnInit {
   userId = '';
 
   usersForm = new FormGroup({
-    name: new FormControl(''),
-    comment: new FormControl(''),
-    login: new FormControl(''),
+    name: new FormControl('', Validators.required),
+    comment: new FormControl('', Validators.required),
+    login: new FormControl('', Validators.required),
     password: new FormControl(''),
   });
   constructor(
@@ -42,6 +42,11 @@ export class UsersComponent implements OnInit {
 
   open(content: any, condition: boolean) {
     this.createUser = condition;
+    if (this.createUser) {
+      this.usersForm.get('password')?.clearValidators();
+    } else {
+      this.usersForm.get('password')?.setValidators([]);
+    }
     this.modalService
       .open(content, { ariaLabelledBy: 'modal-basic-title' })
       .result.then(

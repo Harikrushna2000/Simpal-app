@@ -24,11 +24,11 @@
       <td>{{ users.login }}</td>
       <td>
         <button class="btn btn-success" (click)="editUser(content, users)">
-          <i class="fa fa-pencil-square-o"></i>
+          Edit
         </button>
         &nbsp;
         <button class="btn btn-danger" (click)="deleteUser(users.id)">
-          <i class="fa fa-trash-o"></i>
+          Delete
         </button>
       </td>
     </tr>
@@ -117,6 +117,7 @@
         type="submit"
         class="btn btn-primary buttons"
         (click)="onSubmit()"
+        [disabled]="!usersForm.valid"
       >
         Submit
       </button>
@@ -125,6 +126,8 @@
         type="submit"
         class="btn btn-success buttons"
         (click)="editUserForm()"
+        (click)="modal.close('submit')"
+        [disabled]="!usersForm.valid"
       >
         Edit
       </button>

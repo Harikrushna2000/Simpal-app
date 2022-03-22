@@ -13,7 +13,7 @@ export class StationsService {
 
   constructor(private http: HttpClient) {}
 
-  getstations() {
+  getStations() {
     return this.http.get(this.url + 'stations');
   }
 

@@ -27,11 +27,11 @@
           class="btn btn-success"
           (click)="editStation(content, stations)"
         >
-          <i class="fa fa-pencil-square-o"></i>
+          Edit
         </button>
         &nbsp;
         <button class="btn btn-danger" (click)="deleteStation(stations.id)">
-          <i class="fa fa-trash-o"></i>
+          Delete
         </button>
       </td>
     </tr>
@@ -101,6 +101,7 @@
         type="submit"
         class="btn btn-success buttons"
         (click)="editStationForm()"
+        (click)="modal.close('submit')"
       >
         Edit
       </button>
